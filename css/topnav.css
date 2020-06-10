@@ -1,9 +1,9 @@
 /* Top Navigation */
 	.top-nav {
 		display: inline-block;
-		background: #f1f1f1;
 		width: 100%;
 		border-bottom: 1px #e1e1e1 solid;
+        background-color: #4780ff;
 	}
 
 	/* Social Icon */
