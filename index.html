@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+
+    <title>Thế giới điện thoại</title>
+    <link rel="shortcut icon" href="img/favicon.ico" />
+
+    <!-- Load font awesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" crossorigin="anonymous">
+
+    <!-- Jquery -->
+    <script src="lib/Jquery/Jquery.min.js"></script>
+
+    <!-- owl carousel libraries -->
+    <link rel="stylesheet" href="lib/owlcarousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="lib/owlcarousel/owl.theme.default.min.css">
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Sweet Alert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+
+    <!-- Slider -->
+    <link rel="stylesheet" href="lib/ion.rangeSlider-2.2.0/css/ion.rangeSlider.css">
+    <link rel="stylesheet" href="lib/ion.rangeSlider-2.2.0/css/ion.rangeSlider.skinHTML5.css">
+    <script src="lib/ion.rangeSlider-2.2.0/js/ion-rangeSlider/ion.rangeSlider.min.js"></script>
+
+    <!-- tidio - live chat -->
+    <!-- <script src="//code.tidio.co/bfiiplaaohclhqwes5xivoizqkq56guu.js"></script> -->
+
+    <!-- our files -->
+    <!-- css -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/topnav.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/banner.css">
+    <link rel="stylesheet" href="css/taikhoan.css">
+    <link rel="stylesheet" href="css/trangchu.css">
+    <link rel="stylesheet" href="css/home_products.css">
+    <link rel="stylesheet" href="css/pagination_phantrang.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <!-- js -->
+<!--
+    <script src="js/dungchung.js"></script>
+    <script src="js/trangchu.js"></script>
+-->
+</head>
+
+<body>
+    <div class="top-nav group">
+        <section>
+            <div class="social-top-nav">
+                <a class="fa fa-facebook"></a>
+                <a class="fa fa-twitter"></a>
+                <a class="fa fa-google"></a>
+                <a class="fa fa-youtube"></a>
+            </div> <!-- End Social Topnav -->
+
+            <ul class="top-nav-quicklink flexContain">
+                <li><a href="index.php"><i class="fa fa-home"></i> Trang chủ</a></li>
+                <li><a href=""><i class="fa fa-newspaper-o"></i> Tin tức</a></li>
+                <li><a href=""><i class="fa fa-handshake-o"></i> Tuyển dụng</a></li>
+                <li><a href=""><i class="fa fa-info-circle"></i> Giới thiệu</a></li>
+                <li><a href=""><i class="fa fa-wrench"></i> Bảo hành</a></li>
+                <li><a href=""><i class="fa fa-phone"></i> Liên hệ</a></li>
+            </ul> <!-- End Quick link -->
+        </section><!-- End Section -->
+    </div><!-- End Top Nav  -->
+    <div class="header group">
+        <div class="smallmenu" id="openmenu" onclick="smallmenu(1)">≡</div>
+        <div style="display: none;" class="smallmenu" id="closemenu" onclick="smallmenu(0)">×</div>
+        <div class="logo">
+            <a href="index.php">
+                <img src="img/logo.jpg" alt="Trang chủ Smartphone Store" title="Trang chủ Smartphone Store">
+            </a>
+        </div> <!-- End Logo -->
+
+        <div class="content">
+            <div class="search-header">
+                <form class="input-search" method="get" action="index.php">
+                    <div class="autocomplete">
+                        <input id="search-box" name="search" autocomplete="off" type="text" placeholder="Nhập từ khóa tìm kiếm...">
+                        <button type="submit">
+                            <i class="fa fa-search"></i>
+                            Tìm kiếm
+                        </button>
+                    </div>
+                </form> <!-- End Form search -->
+                <div class="tags">
+                    <strong>Từ khóa: </strong>
+                </div>
+            </div> <!-- End Search header -->
+
+            <div class="tools-member">
+                <div class="member">
+                    <a onclick="checkTaiKhoan()" id="btnTaiKhoan">
+                        <i class="fa fa-user"></i>
+                        Tài khoản
+                    </a>
+                    <div class="menuMember hide">
+                        <a href="nguoidung.php">Trang người dùng</a>
+                        <a onclick="checkDangXuat();">Đăng xuất</a>
+                    </div>
+                </div> <!-- End Member -->
+
+                <div class="cart">
+                    <a href="giohang.php">
+                        <i class="fa fa-shopping-cart"></i>
+                        <span>Giỏ hàng</span>
+                        <span class="cart-number"></span>
+                    </a>
+                </div> <!-- End Cart -->
+
+                <!-- <div class="check-order">
+                    <a>
+                        <i class="fa fa-truck"></i>
+                        <span>Đơn hàng</span>
+                    </a>
+                </div>  -->
+            </div><!-- End Tools Member -->
+        </div> <!-- End Content -->
+    </div> <!-- End Header -->
+    <div class="banner">
+        <div class="owl-carousel owl-theme"></div>
+    </div> <!-- End Banner -->
+
+    <div class="smallbanner" style="width: 100%;"></div>
+
+    <div class="companysFilter">
+        <button class="companysButton" onclick="setCompanysMenu()">
+            <p>Hãng</p>
+            <div id="iconOpenMenu">▷</div>
+            <div id="iconCloseMenu" style="display: none;">▽</div>
+        </button>
+    </div>
+    <div class="companyMenu group flexContain"></div>
+
+    <div class="timNangCao">
+        <div class="flexContain">
+            <div class="pricesRangeFilter dropdown">
+                <button class="dropbtn">Giá tiền</button>
+                <div class="dropdown-content"></div>
+            </div>
+
+            <div class="promosFilter dropdown">
+                <button class="dropbtn">Khuyến mãi</button>
+                <div class="dropdown-content"></div>
+            </div>
+
+            <div class="starFilter dropdown">
+                <button class="dropbtn">Số lượng sao</button>
+                <div class="dropdown-content"></div>
+            </div>
+
+            <div class="sortFilter dropdown">
+                <button class="dropbtn">Sắp xếp</button>
+                <div class="dropdown-content"></div>
+            </div>
+        </div>
+
+        <div>
+            <input type="text" class="js-range-slider" id="demoSlider">
+        </div>
+
+    </div> <!-- End khung chọn bộ lọc -->
+
+    <div class="choosedFilter flexContain"></div> <!-- Những bộ lọc đã chọn -->
+    <hr>
+
+    <!-- Mặc định mới vào trang sẽ ẩn đi, nế có filter thì mới hiện lên -->
+    <div class="contain-products" style="display:none">
+        <div class="filterName">
+            <div id="divSoLuongSanPham"></div>
+            <input type="text" placeholder="Lọc trong trang theo tên..." onkeyup="filterProductsName(this)">
+            <div class="loader" style="display: none"></div>
+        </div> <!-- End FilterName -->
+
+        <ul id="products" class="homeproduct group flexContain">
+            <div id="khongCoSanPham">
+                <i class="fa fa-times-circle"></i>
+                Không có sản phẩm nào
+            </div> <!-- End Khong co san pham -->
+        </ul><!-- End products -->
+
+        <div class="pagination"></div>
+    </div>
+
+    <!-- Div hiển thị khung sp hot, khuyến mãi, mới ra mắt ... -->
+    <div class="contain-khungSanPham"></div>
+    <div class="containTaikhoan">
+        <span class="close" onclick="showTaiKhoan(false);">&times;</span>
+        <div class=" taikhoan">
+            <ul class="tab-group">
+                <li class="tab active"><a href="#login">Đăng nhập</a></li>
+                <li class="tab"><a href="#signup">Đăng kí</a></li>
+            </ul> <!-- /tab group -->
+            <div class="tab-content">
+                <div id="login">
+                    <h1>Chào mừng bạn trở lại!</h1>
+                    <!-- <form onsubmit="return logIn(this);"> -->
+                    <form action="" method="post" name="formDangNhap" onsubmit="return checkDangNhap();">
+                        <div class="field-wrap">
+                            <label>
+                                Tên đăng nhập<span class="req">*</span>
+                            </label>
+                            <input name="username" type="text" id="username" required autocomplete="off" />
+                        </div> <!-- /user name -->
+                        <div class="field-wrap">
+                            <label>
+                                Mật khẩu<span class="req">*</span>
+                            </label>
+                            <input name="pass" type="password" id="pass" required autocomplete="off" />
+                        </div> <!-- pass -->
+                        <p class="forgot"><a href="#">Quên mật khẩu?</a></p>
+                        <button type="submit" class="button button-block">Tiếp tục</button>
+                    </form> <!-- /form -->
+                </div> <!-- /log in -->
+                <div id="signup">
+                    <h1>Đăng kí miễn phí</h1>
+                    <!-- <form onsubmit="return signUp(this);"> -->
+                    <form action="" method="post" name="formDangKy" onsubmit="return checkDangKy();">
+                        <div class="top-row">
+                            <div class="field-wrap">
+                                <label>
+                                    Họ<span class="req">*</span>
+                                </label>
+                                <input name="ho" type="text" id="ho" required autocomplete="off" />
+                            </div>
+                            <div class="field-wrap">
+                                <label>
+                                    Tên<span class="req">*</span>
+                                </label>
+                                <input name="ten" id="ten" type="text" required autocomplete="off" />
+                            </div>
+                        </div> <!-- / ho ten -->
+                        <div class="top-row">
+                            <div class="field-wrap">
+                                <label>
+                                    Điện thoại<span class="req">*</span>
+                                </label>
+                                <input name="sdt" id="sdt" type="text" pattern="\d*" minlength="10" maxlength="12" required autocomplete="off" />
+                            </div> <!-- /sdt -->
+                            <div class="field-wrap">
+                                <label>
+                                    Email<span class="req">*</span>
+                                </label>
+                                <input name="email" id="email" type="email" required autocomplete="off" />
+                            </div> <!-- /email -->
+                        </div>
+                        <div class="field-wrap">
+                            <label>
+                                Địa chỉ<span class="req">*</span>
+                            </label>
+                            <input name="diachi" id="diachi" type="text" required autocomplete="off" />
+                        </div> <!-- /user name -->
+                        <div class="field-wrap">
+                            <label>
+                                Tên đăng nhập<span class="req">*</span>
+                            </label>
+                            <input name="newUser" id="newUser" type="text" required autocomplete="off" />
+                        </div> <!-- /user name -->
+                        <div class="field-wrap">
+                            <label>
+                                Mật khẩu<span class="req">*</span>
+                            </label>
+                            <input name="newPass" id="newPass" type="password" required autocomplete="off" />
+                        </div> <!-- /pass -->
+                        <button type="submit" class="button button-block">Tạo tài khoản</button>
+                    </form> <!-- /form -->
+                </div> <!-- /sign up -->
+            </div><!-- tab-content -->
+        </div> <!-- /taikhoan -->
+    </div>
+    <div class="plc">
+        <section>
+            <ul class="flexContain">
+                <li>Giao hàng hỏa tốc trong 1 giờ</li>
+                <li>Thanh toán linh hoạt: tiền mặt, visa / master, trả góp</li>
+                <li>Trải nghiệm sản phẩm tại nhà</li>
+                <li>Lỗi đổi tại nhà trong 1 ngày</li>
+                <li>Hỗ trợ suốt thời gian sử dụng.
+                    <br>Hotline:
+                    <a href="tel:12345678" style="color: #288ad6;">1234.5678</a>
+                </li>
+            </ul>
+        </section>
+    </div>
+    <div id="alert">
+        <span id="closebtn">&otimes;</span>
+    </div>
+
+    <!-- ============== Footer ============= -->
+    <div class="copy-right">
+        <p>
+            All rights reserved © 2018-' . date("Y") . ' - Designed by
+            <span style="color: #eee; font-weight: bold">Quốc Bảo</span>
+        </p>
+    </div>
+</body></html>
